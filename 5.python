@@ -1,0 +1,21 @@
+from math import sin
+import math
+a=float(input("Enter the n in x(n) value: "))
+n=[0,199]
+x=sin(((3*math.pi)/100)*a)
+
+for a in n:
+    if x == 0:
+        b=(-1.5*x)+(2*(x+1))-(0.5*(x+2))
+        print('y(n) = ',b)
+        break
+    if 0 < x < 198:
+        c=0.5*(x+1)-0.5*(x-1)
+        print('y(n) = ',c)
+        break
+    if a == 199:
+        d=(1.5*x)-(2*(x-1))+(0.5*(x-2))
+        print('y(n) = ',d)
+    
+   
+
