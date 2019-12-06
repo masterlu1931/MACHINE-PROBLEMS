@@ -1,21 +1,52 @@
-from math import sin
-import math
-a=float(input("Enter the n in x(n) value: "))
-n=[0,199]
-x=sin(((3*math.pi)/100)*a)
-
-for a in n:
-    if x == 0:
-        b=(-1.5*x)+(2*(x+1))-(0.5*(x+2))
-        print('y(n) = ',b)
-        break
-    if 0 < x < 198:
-        c=0.5*(x+1)-0.5*(x-1)
-        print('y(n) = ',c)
-        break
-    if a == 199:
-        d=(1.5*x)-(2*(x-1))+(0.5*(x-2))
-        print('y(n) = ',d)
+from math import pi
+import matplotlib.pyplot as plt
+import numpy as np
+n=np.arange(0,200)
+v=(1,2)
+w=input('Enter 1 for sine function or enter 2 for cosine: ')
+for w in v:
+    if w==1:
     
-   
+        x=eval(input('Enter the x funtion: '))
+        x=np.sin(x)
+
+        a=x*(n+1)
+        b=x*(n+2)
+        c=x*(n-1)
+        d=x*(n-2)
+        if n.all()==0:
+            y=(-1.5*x)+(2*a)-(0.5*b) 
+        elif 0 < n and n< 198:
+            y=(0.5*a)-(0.5*c)
+        else:
+            y=(1.5*x)-(2*c)+(0.5*d)
+        plt.grid()
+        plt.plot(x,color='g')
+        plt.plot(y,color='b')
+        plt.xlabel('x - axis')
+        plt.ylabel('y - axis')
+        plt.show()
+        break
+    if w==2:
+        x=eval(input('Enter the x funtion: '))
+        x=np.cos(x)
+
+        a=x*(n+1)
+        b=x*(n+2)
+        c=x*(n-1)
+        d=x*(n-2)
+        if n.all()==0:
+            y=(-1.5*x)+(2*a)-(0.5*b) 
+        elif 0 < n and n< 198:
+            y=(0.5*a)-(0.5*c)
+        else:
+            y=(1.5*x)-(2*c)+(0.5*d)
+        plt.grid()
+        plt.plot(x,color='g')
+        plt.plot(y,color='b')
+        plt.xlabel('x - axis')
+        plt.ylabel('y - axis')
+        plt.show()
+        break
+
 
